@@ -1,22 +1,39 @@
 const http = require('http');
 const url = require('url');
 const querystring = require('querystring');
+const express = require('express');
+
+
+const app = express();
+
+const postgresProperties = require('./postgres-properties');
+var users = require('./users');
+var partners = require('./partners');
 
 const hostname = '127.0.0.1';
 const port = 3000;
 
-const server = http.createServer((req, res) => {
-	var params = querystring.parse(url.parse(req.url).query);
-	res.statusCode = 200;
-	res.setHeader('Content-Type', 'text/html');
-	if('prenom'in params && 'nom' in params){
-		res.end('Hello World ' + params['prenom'] + ' ' + params['nom'] + '\n');
-	}else {
-        res.end('Vous devez bien avoir un pr&eacute;nom et un nom, non ?');
-    }
-    res.end();
+app.get('/', function(req, res) {
+
+    res.setHeader('Content-Type', 'application/json');
+	
+	postgresProperties.pool.connect(function(err, client, done) {
+		queryResult = client.query('select * from users', [], function(err, result) {
+			//call `done()` to release the client back to the pool 
+			done();
+
+			if(err) {
+			  return console.error('error running query', err);
+			}
+			
+			res.end(JSON.stringify(result.rows));
+			//output: 1 
+		});
+	});
+    //res.end(users.findAll());
+
 });
 
-server.listen(port, hostname, () => {
+app.listen(port, hostname, () => {
 	console.log(`Server running at http://${hostname}:${port}/`);
 });
