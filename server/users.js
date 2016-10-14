@@ -1,7 +1,7 @@
 const postgresProperties = require('./postgres-properties');
 
 function findAll(){
-	postgresProperties.executeQuery('select * from users', [], postgresProperties.pool);
+	return postgresProperties.executeQuery('select * from users', []);
 }
 
 exports.findAll = findAll;

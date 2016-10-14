@@ -1,4 +1,4 @@
-const pg = require('pg');
+const pgp = require('pg-promise')();
 
 const config = {
 	user : 'postgres',
@@ -7,28 +7,17 @@ const config = {
 	port: 5432,
 	max: 10,
 	idleTimeoutMillis: 30000,
+	host: 'localhost'
 };
 
-const pool = new pg.Pool(config);
+const db = pgp(config);
 
-pool.on('error', function (err, client) {
-  console.error('error fetching client from pool', err)
-});
-
-function executeQuery(query, datas, pool){
-	pool.connect(function(err, client, done) {
-		queryResult = client.query(query, datas, function(err, result) {
-			//call `done()` to release the client back to the pool 
-			done();
-
-			if(err) {
-			  return console.error('error running query', err);
-			}
-			console.log(result.rows[0].first_name);
-			//output: 1 
+function executeQuery(query, datas){
+	return db.task(t => {
+		return t.many(query, datas).then(data => {
+			return data;
 		});
 	});
 }
 
-exports.pool = pool;
 exports.executeQuery = executeQuery;
