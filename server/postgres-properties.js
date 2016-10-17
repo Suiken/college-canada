@@ -22,7 +22,7 @@ const db = pgp(config);
 function executeQuery(query, datas, rows){
 	return db.task(t => {
 		switch(rows){
-			case Rows.any : 
+			case Rows.any :
 				return t.any(query, datas).then(data => {
 					return data;
 				});
@@ -42,7 +42,7 @@ function executeQuery(query, datas, rows){
 					return data;
 				});
 				break;
-		}	
+		}
 	});
 }
 
