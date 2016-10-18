@@ -2,6 +2,7 @@
   "name": "college-canada-server",
   "version": "0.1.0",
   "dependencies": {
+    "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "pg": "~6.1.0",
     "pg-promise": "^5.3.4"

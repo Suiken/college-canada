@@ -1,22 +1,26 @@
+const hostname = 'localhost';
+const port = 3000;
+
 const http = require('http');
 const url = require('url');
 const querystring = require('querystring');
 const express = require('express');
-
+const bodyParser = require('body-parser');
 
 const app = express();
 
 var users = require('./users');
 var partners = require('./partners');
 
-const hostname = 'localhost';
-const port = 3000;
+const urlencodeParser = bodyParser.urlencoded({ extended: false });
 
 app.all('/*', function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "X-Requested-With");
   next();
 });
+
+
 
 /***************** USERS *****************/
 app.get('/users/show', function(req, res) {
@@ -47,6 +51,7 @@ app.post('/users/add/:firstName/:lastName/:gender/:address/:city/:postalCode/:co
 		req.params.address, req.params.city, null, req.params.postalCode, req.params.country, req.params.birthday);
 });
 
+
 /***************** PARTNERS *****************/
 app.get('/partners/show', function(req, res) {
 	console.log('show');
@@ -71,11 +76,9 @@ app.post('/partners/add/:name/:address/:city/:province/:postalCode/:country', fu
 	partners.create(req.params.name, req.params.address, req.params.city, req.params.province, req.params.postalCode, req.params.country);
 });
 
-app.post('/partners/add/:name/:address/:city/:postalCode/:country', function(req, res) {
-	partners.create(req.params.name, req.params.address, req.params.city, null, req.params.postalCode, req.params.country);
+app.post('/partners/add', urlencodeParser, function(req, res) {
+	partners.create(req.body.name, req.body.address, req.body.city, req.body.province, req.body.postalCode, req.body.country);
 });
-
-
 
 
 app.listen(port, hostname, () => {
