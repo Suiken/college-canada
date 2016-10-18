@@ -9,8 +9,14 @@ const app = express();
 var users = require('./users');
 var partners = require('./partners');
 
-const hostname = '127.0.0.1';
+const hostname = 'localhost';
 const port = 3000;
+
+app.all('/*', function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  next();
+});
 
 /***************** USERS *****************/
 app.get('/users/show', function(req, res) {
@@ -43,6 +49,7 @@ app.post('/users/add/:firstName/:lastName/:gender/:address/:city/:postalCode/:co
 
 /***************** PARTNERS *****************/
 app.get('/partners/show', function(req, res) {
+	console.log('show');
     res.setHeader('Content-Type', 'application/json');
 	partners.findAll().then(data => {
 		res.end(JSON.stringify(data));
