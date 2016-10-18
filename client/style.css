@@ -9,3 +9,29 @@ body{
 	margin-top: 7%;
 	margin-bottom: 3%;
 }
+
+#partners{
+	margin-top: 5%;
+	margin-bottom: 3%;
+}
+
+#partners li{
+	list-style-type: none;
+	height: 100px;
+	width: 130px;
+	display: inline-block;
+	background-color : black;
+	margin: 1%;
+	text-align: center;
+}
+
+.partnerLink{
+	background-color : white;
+	height: 100%;
+	width: 100%;
+	border-radius: 2px;
+}
+
+.partnerLink:hover{
+	background-color: grey;
+}
