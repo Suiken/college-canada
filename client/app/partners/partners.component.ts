@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgModel } from '@angular/forms';
 
-import { Partner } from './partner';
-import { PartnerService } from './partner.service';
+import { Partner } from '../partner';
+import { PartnerService } from '../partner.service';
 
 @Component({
   moduleId: module.id,

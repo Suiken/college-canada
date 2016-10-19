@@ -1,33 +1,30 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { Ng2BootstrapModule } from 'ng2-bootstrap/ng2-bootstrap';
 import { HttpModule } from '@angular/http';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeadCarouselComponent } from './head-carousel.component';
-import { HomeComponent } from './home.component';
-import { PartnersComponent } from './partners.component';
+
+import { AdminModule } from './admin/admin.module';
+import { HomeModule } from './home/home.module';
+import { PartnersModule } from './partners/partners.module';
 
 import { PartnerService } from './partner.service';
 
 @NgModule({
 	declarations: [
-		AppComponent, 
-		HeadCarouselComponent, 
-		HomeComponent, 
-		PartnersComponent
+		AppComponent
 	],
 	imports: [
 		BrowserModule,
-		FormsModule,
 		Ng2BootstrapModule,
 		HttpModule,
-		RouterModule.forRoot([
-			{ path: '', component: HomeComponent },
-			{ path: 'partners', component: PartnersComponent }
-		])
+		AppRoutingModule,
+		AdminModule,
+		HomeModule,
+		PartnersModule
 	],
 	providers: [ PartnerService ],
 	bootstrap: [ AppComponent ]
