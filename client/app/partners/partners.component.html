@@ -1,12 +1,23 @@
 <div id="partners">
-	<h2>Partners</h2>
+	<h2>Écoles</h2>
 	<ul>
 		<li *ngFor="let partner of partners">
 			<a href="/partners#">
 				<div class="partnerLink">
 					<span>{{partner.name}}</span>
+					<span>{{partner.postal_code}}</span>
 				</div>
 			</a>
 		</li>
 	</ul>
+	<!-- <h2>Logements</h2>
+	<ul>
+		<li *ngFor="let housing of housings">
+			<a href="/partners#">
+				<div class="partnerLink">
+					<span>{{housing.name}}</span>
+				</div>
+			</a>
+		</li>
+	</ul> -->
 </div>

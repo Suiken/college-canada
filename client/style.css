@@ -1,8 +1,57 @@
 body{
-	background-color: rgb(26, 35, 126);
+	background-color: rgb(158, 71, 88);
 	margin-left: 2%;
 	margin-right: 2%;
 	color: rgb(225, 225, 225);
+}
+
+.logo{
+	margin-top: -20px;
+	width: 60px;
+	height: auto;
+}
+
+.navbar-inverse{
+	background-color: white;
+}
+
+.container-fluid{
+	height: 60px;
+	margin-top: 10px;
+	background-color: white;
+}
+
+.navbar-nav{
+	margin-left: 20%;
+}
+
+.nav > li{
+	margin-left: 50px;
+	color: rgb(27, 52, 128);
+}
+
+.navbar-inverse .navbar-nav > li > a{
+	color: rgb(158, 71, 88);
+}
+
+.navbar-inverse .navbar-nav > li > a:hover{
+	color: rgb(27, 52, 128);
+}
+
+.navbar-inverse .navbar-nav > li > a:focus{
+	color: rgb(158, 71, 88);
+}
+
+.navbar-inverse .navbar-brand{
+	color: rgb(158, 71, 88);
+}
+
+.navbar-inverse .navbar-brand:hover{
+	color: rgb(27, 52, 128);
+}
+
+.navbar-inverse .navbar-brand:focus{
+	color: rgb(158, 71, 88);
 }
 
 .carousel{
@@ -11,25 +60,39 @@ body{
 }
 
 #partners{
-	margin-top: 5%;
-	margin-bottom: 3%;
+	margin-top: 100px;
+	margin-bottom: 20px;
+}
+
+
+
+#partners h2{
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+#partners ul{
+	margin-left: -110px;
 }
 
 #partners li{
 	list-style-type: none;
-	height: 100px;
-	width: 130px;
+	height: 160px;
+	width: 190px;
 	display: inline-block;
-	background-color : black;
-	margin: 1%;
+	margin: 1px;
 	text-align: center;
+}
+
+#partners li a{
+	color: rgb(27, 52, 128);
+	text-decoration: none;
 }
 
 .partnerLink{
 	background-color : white;
 	height: 100%;
 	width: 100%;
-	border-radius: 2px;
 }
 
 .partnerLink:hover{

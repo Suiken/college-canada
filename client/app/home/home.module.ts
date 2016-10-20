@@ -15,7 +15,7 @@ import { HeadCarouselComponent } from './head-carousel.component';
     RouterModule.forChild([
       {
         path: '',
-        redirectTo: '/home',
+        redirectTo: 'home',
         pathMatch: 'full'
       },
     	{ 
@@ -28,15 +28,24 @@ import { HeadCarouselComponent } from './head-carousel.component';
           },
           {
             path: 'partners',
-            component: PartnersComponent
+            loadChildren: 'app/partners/partners.module#PartnersModule'
           }
+          // {
+          //   path: 'services',
+          //   component: ServicesComponent
+          // },
+          // {
+          //   path: 'contacts',
+          //   component: ContactsComponent
+          // }
         ]
       }
     ])
   ],
   declarations: [
 	  HomeComponent,
-    HeadCarouselComponent
+    HeadCarouselComponent,
+    MenuComponent,
   ],
   providers: [
   ]

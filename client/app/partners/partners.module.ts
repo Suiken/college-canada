@@ -13,7 +13,7 @@ import { PartnerService } from '../partner.service';
     FormsModule,
     RouterModule.forChild([
     	{ path: '', component: PartnersComponent }
-	])
+	  ])
   ],
   declarations: [
 	  PartnersComponent
