@@ -6,5 +6,7 @@ export class Partner {
 	public city: string,
 	public province: string,
 	public postalCode: string,
-	public country: string){ }
+	public country: string,
+	public logo: string,
+	public website:string){ }
 }

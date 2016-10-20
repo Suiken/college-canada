@@ -31,7 +31,11 @@ export class PartnerService {
   // }
 
   private extractData(res: Response) {
-    return res.json() as Partner[];
+    var partners = res.json() as Partner[];
+    for(var partner of partners){
+      partner.postalCode = partner.postal_code;
+    }
+    return partners;
   }
 
   private handleError (error: any) {
