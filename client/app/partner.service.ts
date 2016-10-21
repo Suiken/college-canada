@@ -32,9 +32,6 @@ export class PartnerService {
 
   private extractData(res: Response) {
     var partners = res.json() as Partner[];
-    for(var partner of partners){
-      partner.postalCode = partner.postal_code;
-    }
     return partners;
   }
 
