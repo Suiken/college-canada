@@ -1,4 +1,4 @@
-const postgresProperties = require('./postgres-properties');
+const postgresProperties = require('../config/postgres-properties');
 
 function findAll(){
 	return postgresProperties.executeQuery('select * from users', [], postgresProperties.Rows.many);
