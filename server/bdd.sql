@@ -8,8 +8,9 @@ create table users
 	city varchar(255) not null,
 	province varchar(255) default null,
 	postal_code varchar(255) not null,
-	country varchar(255) not null
-); 
+	country varchar(255) not null,
+	mail varchar(255) not null
+);
 
 create table visits(
 	partner_id integer not null,
@@ -30,8 +31,9 @@ create table partners
 	province varchar(255) default null,
 	postal_code varchar(255) not null,
 	country varchar(255) not null,
-	logo varchar(255) not null,
-	website varchar(255) not null
+	website varchar(255) not null,
+	logo varchar(255) not null
+	school boolean default 'true'
 );
 
 insert into users(first_name, last_name, gender, address, city, province, postal_code, country)
