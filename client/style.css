@@ -1,5 +1,5 @@
 body{
-	background-color: rgb(158, 71, 88);
+	background-color: rgb(27, 52, 128);
 	margin-left: 2%;
 	margin-right: 2%;
 	color: rgb(225, 225, 225);
@@ -27,31 +27,31 @@ body{
 
 .nav > li{
 	margin-left: 50px;
-	color: rgb(27, 52, 128);
+	color: rgb(158, 71, 88);
 }
 
 .navbar-inverse .navbar-nav > li > a{
-	color: rgb(158, 71, 88);
+	color: rgb(27, 52, 128);
 }
 
 .navbar-inverse .navbar-nav > li > a:hover{
-	color: rgb(27, 52, 128);
+	color: rgb(158, 71, 88);
 }
 
 .navbar-inverse .navbar-nav > li > a:focus{
-	color: rgb(158, 71, 88);
-}
-
-.navbar-inverse .navbar-brand{
-	color: rgb(158, 71, 88);
-}
-
-.navbar-inverse .navbar-brand:hover{
 	color: rgb(27, 52, 128);
 }
 
-.navbar-inverse .navbar-brand:focus{
+.navbar-inverse .navbar-brand{
+	color: rgb(27, 52, 128);
+}
+
+.navbar-inverse .navbar-brand:hover{
 	color: rgb(158, 71, 88);
+}
+
+.navbar-inverse .navbar-brand:focus{
+	color: rgb(27, 52, 128);
 }
 
 .carousel{
@@ -63,8 +63,6 @@ body{
 	margin-top: 100px;
 	margin-bottom: 20px;
 }
-
-
 
 #partners h2{
 	text-align: center;
@@ -85,7 +83,7 @@ body{
 }
 
 #partners li a{
-	color: rgb(27, 52, 128);
+	color: rgb(158, 71, 88);
 	text-decoration: none;
 }
 
@@ -97,4 +95,25 @@ body{
 
 .partnerLink:hover{
 	background-color: grey;
+}
+
+#investment{
+	margin-top: 100px;
+	margin-bottom: 20px;
+	height: 200px;
+	width: 400px;
+}
+
+#accompaniment{
+	margin-left: 500px;
+	margin-top: -220px;
+	height: 200px;
+	width: 400px;
+}
+
+#process{
+	margin-left: 1000px;
+	margin-top: -220px;
+	height: 200px;
+	width: 400px;
 }

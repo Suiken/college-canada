@@ -7,6 +7,9 @@ import { MenuComponent } from './menu.component';
 import { HomeComponent } from './home.component';
 import { PartnersComponent } from '../partners/partners.component';
 import { HeadCarouselComponent } from './head-carousel.component';
+import { UsComponent } from '../us/us.component';
+import { ApplicationComponent } from '../application/application.component';
+import { ServicesAdvantagesComponent } from '../services-advantages/services-advantages.component';
 
 @NgModule({
   imports: [
@@ -29,15 +32,19 @@ import { HeadCarouselComponent } from './head-carousel.component';
           {
             path: 'partners',
             loadChildren: 'app/partners/partners.module#PartnersModule'
+          },
+          {
+            path: 'us',
+            component: UsComponent
+          },
+          {
+            path: 'application',
+            component: ApplicationComponent
+          },
+          {
+            path: 'services-advantages',
+            component: ServicesAdvantagesComponent
           }
-          // {
-          //   path: 'services',
-          //   component: ServicesComponent
-          // },
-          // {
-          //   path: 'contacts',
-          //   component: ContactsComponent
-          // }
         ]
       }
     ])
@@ -46,6 +53,9 @@ import { HeadCarouselComponent } from './head-carousel.component';
 	  HomeComponent,
     HeadCarouselComponent,
     MenuComponent,
+    UsComponent,
+    ApplicationComponent,
+    ServicesAdvantagesComponent
   ],
   providers: [
   ]
